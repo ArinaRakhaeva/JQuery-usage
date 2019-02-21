@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <style>
+                button {
+                  background-color: rgb(160, 160, 160);
+                  border: none;
+                  color: rgb(255, 254, 254);
+                  padding: 15px 32px;
+                  text-align: center;
+                  text-decoration: none;
+                  display: inline-block;
+                  font-size: 16px;
+                  margin: 4px 2px;
+                  cursor: pointer;
+                }
+                #res {
+                  background-color: rgb(116, 176, 253);
+                  border: none;
+                  color: rgb(7, 16, 136);
+                  padding: 15px 32px;
+                  text-align: center;
+                  text-decoration: none;
+                  display: inline-block;
+                  font-size: 16px;
+                  margin: 4px 2px;
+                  cursor: pointer;
+                }
+        </style>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <title>
+       Calculator
+    </title>
+    
+</head>
+
+<body>
+
+    <script>
+        function add() {
+            var v1 = Number(document.getElementById("first").value);
+            var v2 = Number(document.getElementById("second").value);
+            document.getElementById("res").value = v1 + v2;
+            return 0;
+        }
+        function minus() {
+            var v1 = Number(document.getElementById("first").value);
+            var v2 = Number(document.getElementById("second").value);
+            document.getElementById("res").value = v1 - v2;
+            return 0;
+        }
+    </script>
+
+    <h2> Calculator</h2>
+    <div class="form-row align-items-left">
+            <div class="col-auto "> 
+<input class="form-control" id="res" placeholder="Result=">
+</div>
+
+</div>
+<div class="form-row align-items-left">
+    <div class="col-auto ">
+        <input type="text" class="form-control" id="first">
+    </div>
+        <div class="col-auto ">
+        <input type="text" class="form-control" id="second">
+    </div>
+</div>
+<div class="form-row align-items-left">
+        <div class="col-auto ">
+        <button type="button" value="+" onclick="add()">+</button>
+        <button type="button" value="-" onclick="minus()">-</button>
+    </div>
+</div>
+        
+
+</body>
+
+</html>

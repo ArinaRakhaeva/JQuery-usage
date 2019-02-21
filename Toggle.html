@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Using jquery</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $(".Toggle").click(function() {
+                $("p:first").toggle();
+            });
+            $(".FadeOut").click(function() {
+                $("p").fadeOut();
+            });
+        });
+    </script>
+    <section>
+        <h3>Бродский</h3>
+        <article>
+            <h4>Chapter 1</h4>
+            <p>Когда теряет равновесие твоё сознание усталое, когда ступеньки этой лестницы уходят из под ног, как палуба, когда плюёт на человечество твоё ночное одиночество, - ты можешь размышлять о вечности и сомневаться в непорочности идей, гипотез,
+                восприятия произведения искусства, и - кстати - самого зачатия Мадонной сына Иисуса. Но лучше поклоняться данности с глубокими её могилами, которые потом, за давностью, покажутся такими милыми.</p>
+        </article>
+        <button class='Toggle'>Toggle Chapter 1</button>
+        <article>
+            <h4>Chapter 2</h4>
+            <p>Да. Лучше поклонятся данности с убогими её мерилами, которые потом до крайности, послужат для тебя перилами (хотя и не особо чистыми), удерживающими в равновесии твои хромающие истины на этой выщербленной лестнице.</p>
+        </article>
+        <button class='FadeOut'>Fade out both</button>
+    </section>
+</body>
+
+</html>

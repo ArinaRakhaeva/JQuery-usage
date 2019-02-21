@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Using jquery</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+   
+    <title>
+        Registration form
+    </title>
+</head>
+
+<body>
+    <h2>Registration form</h2>
+
+    <form id="myform" class="validate">
+        <div class="form-row align-items-left">
+            <div class="col-auto">
+                <label for="Firstname">First name</label>
+                <input class="form-control" id="Firstname" name="first">
+            </div>
+            <div class="col-auto">
+                <label for="Lastname">Last name</label>
+                <input type="text" class="form-control" id="Lastname" name="last">
+            </div>
+        </div>
+        <div class="form-row align-items-left">
+            <div class="col-auto">
+                <label for="Streetadress">Street adress</label>
+                <input type="text" class="form-control" id="Streetadress" name="stadress">
+            </div>
+            <div class="col-auto">
+                    <p>Country</p>
+                    <select class="js-countries-single form-control" id="Country" name="country[]">
+                        <option value="RU">Russia</option>
+                        <option value="FI">Finland</option>
+                        <option value="US">United Stated</option>
+                        <option value="FR">France</option>
+                        <option value="SP">Spain</option>
+                        <option value="GR">Great Britain</option>
+                        <option value="SW">Sweden</option>
+                        <option value="NE">Netherlands</option>
+                        <option value="AU">Austria</option>
+                      </select>
+                </div>
+        </div>
+        <div class="form-row align-items-left">
+            <div class="col-auto">
+                <label for="Postalcode">Postal code</label>
+                <input type="text" class="form-control" id="Postalcode" name="postcode">
+            </div>
+            <div class="col-auto">
+                    <label for="Email1">Email address</label>
+                    <input type="email" class="form-control" id="Email1" name="email">
+                </div>
+        </div>
+        <div class="form-row align-items-left">
+            <div class="col-auto">
+                <label for="Company">Company</label>
+                <input type="text" class="form-control" id="Company" name="company">
+            </div>
+            
+        </div>
+        <p>Payment method</p>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="paymentmethod" id="paymentmethod" value="option1" checked>
+            <label class="form-check-label" for="paymentmethod">
+             Mastercard
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="paymentmethod" id="paymentmethod2" value="option2">
+            <label class="form-check-label" for="paymentmethod2">
+              Visa
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="paymentmethod" id="paymentmethod3" value="option3">
+            <label class="form-check-label" for="paymentmethod3">
+                  Billing
+                </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+    $('.js-countries-single').select2();
+});
+    jQuery.validator.setDefaults({
+        debug: true,
+        success: "valid"
+    });
+    $('form').validate({
+        rules: {
+            first: {
+                required : true,
+                minlength : 2,
+                maxlength: 40
+            },
+            last: {
+                required: true,
+                minlength: 2,
+                maxlength: 40
+            },
+            stadress: {
+                required: true,
+                minlength: 5,
+                maxlength: 50
+            },
+            postcode:{
+                required: true,
+                digits: true
+            },
+            country: {
+                required: true
+            },
+            compamy: {
+                required: true
+            },
+            email:{
+                required: true,
+                email: true
+            }
+        },
+        submitHandler: function (form) {
+            form.submit();
+        }
+    });
+    </script>
+</body>
+
+</html>
