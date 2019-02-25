@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!-- jQuery -->
+<script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- nanogallery2 -->
+<link    href="https://unpkg.com/nanogallery2@2.3.0/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
+<script src="https://unpkg.com/nanogallery2@2.3.0/dist/jquery.nanogallery2.min.js"></script>
+    <title>
+       Gallery
+    </title>
+    <style>
+        body {
+        background-color: lightblue;
+      }
+      h2 {
+        text-align: center;
+        color: rgb(13, 12, 87);
+      }
+      </style>
+</head>
+
+<body>
+  <h2>Gallery</h2>
+  <div id="nanogallery2">gallery_made_with_nanogallery2</div>
+  <script>
+   jQuery(document).ready(function () {
+      jQuery("#nanogallery2").nanogallery2({
+        thumbnailHeight:  150,
+        thumbnailWidth:   150,
+        itemsBaseURL:     'https://images2.pics4learning.com/catalog/', 
+        items: [
+            { src: 'l/thumb_big/libby_thumb_big.jpg', srct: 'l/thumb_big/libby_thumb_big.jpg', title: 'Бигль' },
+            { src: 'd/thumb_big/dartagnaninthesnow_thumb_big.jpg', srct: 'd/thumb_big/dartagnaninthesnow_thumb_big.jpg', title: 'Хаски' },
+            { src: 'i/thumb_big/img_1014_thumb_big.jpg', srct: 'i/thumb_big/img_1014_thumb_big.jpg', title: 'Французский бульдог' }
+          ]
+      });
+    });
+  </script>
+</body>
+</html>
